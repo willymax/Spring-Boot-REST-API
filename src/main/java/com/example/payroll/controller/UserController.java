@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api")
 public class UserController {
     @GetMapping("/user")
     public Map<String, Object> user(@AuthenticationPrincipal OAuth2User principal) {
