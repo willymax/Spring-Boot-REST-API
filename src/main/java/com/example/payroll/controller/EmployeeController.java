@@ -24,13 +24,13 @@ public class EmployeeController {
 
     EmployeeController(EmployeeRepository employeeRepository, EmployeeModelAssembler assembler) {
         this.repository = employeeRepository;
-        this.assembler =  assembler;
+        this.assembler = assembler;
     }
 
     @PostMapping("/employees")
     public ResponseEntity<EntityModel<Employee>> newEmployee(@RequestBody Employee newEmployee) {
-         EntityModel<Employee>  entityModel = assembler.toModel(repository.save(newEmployee));
-         return ResponseEntity.created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()).body(entityModel);
+        EntityModel<Employee> entityModel = assembler.toModel(repository.save(newEmployee));
+        return ResponseEntity.created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()).body(entityModel);
     }
 
     @GetMapping("/employees")

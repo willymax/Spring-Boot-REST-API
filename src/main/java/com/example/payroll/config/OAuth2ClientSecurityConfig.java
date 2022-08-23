@@ -17,7 +17,7 @@ public class OAuth2ClientSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         // @formatter:off
         http
-                .authorizeRequests(a -> a.antMatchers("/", "/error", "/webjars/**")
+                .authorizeRequests(a -> a.antMatchers("/", "/error", "/webjars/**", "/actuator/**")
                         .permitAll()
                         .anyRequest()
                         .authenticated())

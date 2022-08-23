@@ -1,0 +1,2 @@
+docker build -t williamorg/payroll .
+docker run -p 9000:9000 williamorg/payroll --server.port=9000
